@@ -21,9 +21,6 @@ const Editor: React.FC<IEditorProps> = props => {
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const container = useRef<HTMLDivElement>(null);
 
-	const { state } = useContext(codeContext);
-  console.log(state);
-
 	useEffect(() => {
 		if (container.current && !editorRef.current) {
 			const model = editor.createModel(

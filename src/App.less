@@ -1,7 +1,10 @@
+@import './common/variable.less';
+
 .App {
   width: 100vw;
   height: 100vh;
-  background: #ccc;
+  background: @bg-color;
+  overflow: hidden;
   .wrapper {
     width: 100%;
     height: calc(100vh - 60px);
@@ -12,6 +15,8 @@
       flex-direction: column;
       width: 40%;
       height: 100%;
+      padding-right: 12px;
+      background-color: @darker-bg;
 
       .editor-wrap {
         width: 100%;
@@ -20,8 +25,8 @@
           padding-left: 24px;
           height: 24px;
           line-height: 24px;
-          background: #707070;
-          color: #fff;
+          color: @text-color;
+          font-weight: bold;
         }
       }
     }
