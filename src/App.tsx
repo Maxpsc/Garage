@@ -5,7 +5,6 @@ import HtmlEditor from './component/HtmlEditor';
 import CssEditor from './component/CssEditor';
 import JsEditor from './component/JsEditor';
 import Preview from './component/Preview';
-import Console from './component/Console';
 import './App.less';
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
             <HtmlEditor />
           </div>
           <Preview />
-          {/* <Console /> */}
         </div>
       </div>
     </codeContext.Provider>

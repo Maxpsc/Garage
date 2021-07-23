@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useContext } from 'react';
 import { debounce } from 'lodash';
 import { editor, languages, Uri } from 'monaco-editor';
-import { codeContext } from '../../context';
+import { libContext } from '../../context';
 import './index.less';
 
 import('monaco-themes/themes/Sunburst.json').then((data: any) => {

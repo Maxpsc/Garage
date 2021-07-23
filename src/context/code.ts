@@ -1,21 +1,21 @@
 import React from 'react';
 
 interface CodeState {
-	js: string;
-	css: string;
-	html: string;
+  js: string;
+  css: string;
+  html: string;
 }
 
 interface CodeAction {
-	type: 'js' | 'css' | 'html' | 'all',
-	code: string;
-	codeState?: CodeState
+  type: 'js' | 'css' | 'html' | 'all';
+  code: string;
+  codeState?: CodeState;
 }
 
 export const initCodeState = {
-	js: '',
-	css: '',
-	html: ''
+  js: '',
+  css: '',
+  html: '',
 };
 
 export const codeContext = React.createContext<{

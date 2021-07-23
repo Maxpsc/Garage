@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { transform } from '@babel/standalone';
-import { codeContext } from '../../context';
+import { codeContext, libContext } from '../../context';
 import './index.less';
 
 const parser = (source: string) => {
@@ -23,6 +23,14 @@ const Preview: React.FC = () => {
   const [iframeSrc, setIframeSrc] = useState('');
   
   useEffect(() => {
+    const systemjs = `<script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+    <script type="systemjs-importmap">
+        {
+          "imports": {
+            "lodash": "https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+          }
+        }
+      </script>`;
     const js = parser(state.js);
     const showHtml = typeof js === 'string'
       ? state.html
@@ -39,6 +47,10 @@ const Preview: React.FC = () => {
     </head>
     <body>
       ${showHtml}
+
+      <!-- 加载模块 -->
+      ${systemjs}
+      
       <script type="text/javascript">
       (async function() {
         try {
